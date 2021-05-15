@@ -1,0 +1,43 @@
+.main-container{
+    // 左侧菜单栏样式
+    .leftMenu{
+        width: 180px;
+        height: 100%;
+        position: fixed;
+        .ant-menu{
+            height:100%;
+        }
+    }
+    // 右侧内容区样式
+    .right-container{
+        margin-left: 180px;
+        &.menu-unfold{
+            margin-left: 80px;
+            transition: all 0.3s;
+        }
+        .header{
+            height: 50px;
+            box-sizing: border-box;
+            padding:10px 20px;
+            .ant-breadcrumb{
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .login-container{
+                float: right;
+                li:not(:first-child){
+                    display: none;
+                }
+                &:hover{
+                    li:not(:first-child){
+                        display: block;
+                        background-color: #e6e6e6;
+                        text-align: center;
+                        padding: 6px 10px;
+                        margin-top: 4px;
+                    }  
+                }
+            }
+        }
+    }
+}
