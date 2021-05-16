@@ -21,10 +21,10 @@
 
 <script>
 export default {
-  name: "main-header",
+  name: 'main-header',
   methods: {
     toggleCollapsed() {
-      this.$store.dispatch("changeCollapsed");
+      this.$store.dispatch('changeCollapsed');
     },
   },
 };

@@ -11,17 +11,17 @@
     >
       <!-- 头部部分 -->
       <main-header />
-      
+
     </div>
   </div>
 </template>
 
 <script>
-import LeftMenu from "@/components/LeftMenu.vue";
-import MainHeader from "@/components/MainHeader.vue";
+import LeftMenu from '@/components/LeftMenu.vue';
+import MainHeader from '@/components/MainHeader.vue';
 
 export default {
-  name: "main-container",
+  name: 'main-container',
   data() {
     return {};
   },

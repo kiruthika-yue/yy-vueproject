@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: "mainmenu-container",
+  name: 'mainmenu-container',
   methods: {},
 };
 </script>
