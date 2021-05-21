@@ -30,22 +30,23 @@
   </div>
 </template>
 <script>
-import api from "@/api/user";
+import api from '@/api/user';
+
 export default {
   data() {
     const emailReg = /^[\w-]+@[\w.-]+.com$/;
     const checkAge = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error("请输入邮箱"));
+        return callback(new Error('请输入邮箱'));
       }
       if (emailReg.test(value)) {
         return callback();
       }
-      return callback(new Error("邮箱格式不正确"));
+      return callback(new Error('邮箱格式不正确'));
     };
     const validatePass = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("密码不能为空"));
+      if (value === '') {
+        callback(new Error('请输入密码'));
       } else {
         callback();
       }
@@ -53,12 +54,12 @@ export default {
 
     return {
       loginForm: {
-        password: "",
-        email: "",
+        password: '',
+        email: '',
       },
       rules: {
-        password: [{ validator: validatePass, trigger: "change" }],
-        email: [{ validator: checkAge, trigger: "change" }],
+        password: [{ validator: validatePass, trigger: 'change' }],
+        email: [{ validator: checkAge, trigger: 'change' }],
       },
       layout: {
         labelCol: { span: 4 },
@@ -73,9 +74,9 @@ export default {
           api
             .login(this.loginForm)
             .then((res) => {
-              console.log(res);
+              this.$store.dispatch('setUserInfo', res);
               this.$router.push({
-                name: "Home",
+                name: 'Home',
               });
             })
             .catch((err) => {
